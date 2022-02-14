@@ -11,8 +11,8 @@ namespace FitnessApp
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new LoginPage());
+            NavigationDispatcher.Instance.Initialize(MainPage.Navigation);
         }
 
         protected override void OnStart()

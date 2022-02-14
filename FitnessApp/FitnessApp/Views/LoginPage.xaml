@@ -1,12 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FitnessApp.Views.LoginPage">
+             xmlns:views="clr-namespace:FitnessApp.Views"
+             x:Class="FitnessApp.Views.LoginPage"
+             BackgroundColor="#32353B">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Pace Maker: Your Fitness Journey" TextColor="WhiteSmoke"
-                VerticalOptions="CenterAndExpand" 
+        <StackLayout Margin ="20">
+            <Label Text="Pace Maker: Your Fitness Journey" TextColor="WhiteSmoke" FontSize="Title" 
+                VerticalOptions="Start"
                 HorizontalOptions="CenterAndExpand" />
+            <Label Text="Login" TextColor="WhiteSmoke"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+            <Entry Placeholder="Username"></Entry>
+            <Entry Placeholder="Password"></Entry>
+            <Button Text="Login"></Button>
+            <Label Text="New User?" TextColor="WhiteSmoke" FontSize="Title" 
+                VerticalOptions="Start"
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Sign Up" TextColor="WhiteSmoke"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+            <Entry Placeholder="Username"></Entry>
+            <Entry Placeholder="Password"></Entry>
+            <CheckBox IsChecked="False"/>
+            <Button Text="Sign Up"></Button>
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

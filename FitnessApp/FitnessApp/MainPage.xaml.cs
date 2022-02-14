@@ -13,6 +13,7 @@ namespace FitnessApp
         public MainPage()
         {
             InitializeComponent();
+
         }
     }
 }

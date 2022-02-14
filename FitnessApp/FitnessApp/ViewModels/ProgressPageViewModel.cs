@@ -7,16 +7,11 @@ using Xamarin.Forms;
 
 namespace FitnessApp.ViewModels
 {
-    public class ProgressPage : ContentPage
+    public class ProgressPageViewModel : ContentPage
     {
-        public ProgressPage()
+        public ProgressPageViewModel()
         {
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "Welcome to Xamarin.Forms!" }
-                }
-            };
+            
         }
     }
 }

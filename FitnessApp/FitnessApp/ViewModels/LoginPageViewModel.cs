@@ -1,4 +1,5 @@
 ﻿using FitnessApp.Navigation;
+using FitnessApp.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,8 +22,8 @@ namespace FitnessApp.ViewModels
         }
         public void NavigateToProfile() //not unit testable since it uses xamarin forms
         {
-            var nextPage = new NextPage();
-            NavigationDispatcher.Instance.Navigation.PushAsync(nextPage);
+            var profilepage = new ProfilePage();
+            NavigationDispatcher.Instance.Navigation.PushAsync(profilepage);
         }
         
     }

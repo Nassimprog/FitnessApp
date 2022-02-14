@@ -13,7 +13,7 @@
             <Label Text="Login" FontSize="Title" TextColor="WhiteSmoke"
                 VerticalOptions="Center"
                 HorizontalOptions="Center" />
-            <Entry Placeholder="Username"></Entry>
+            <Entry Placeholder="Email"></Entry>
             <Entry Placeholder="Password"></Entry>
             <Button Text="Login" ></Button>
             
@@ -23,7 +23,7 @@
             <Label Text="Sign Up" TextColor="WhiteSmoke"
                 VerticalOptions="Center"
                 HorizontalOptions="Center" />
-            <Entry Placeholder="Username"></Entry>
+            <Entry Placeholder="Email"></Entry>
             <Entry Placeholder="Password"></Entry>
             <StackLayout>
                 <Grid>

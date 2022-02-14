@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:FitnessApp.Views"
+             x:Class="FitnessApp.Views.LoginPage"
+             BackgroundColor="#32353B">
+    
+    
+    <ContentPage.Content>
+        <StackLayout Margin ="20" HorizontalOptions="CenterAndExpand">
+            <Image Source="Title"></Image>
+
+            <Label Text="Login" FontSize="Title" TextColor="WhiteSmoke"></Label>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

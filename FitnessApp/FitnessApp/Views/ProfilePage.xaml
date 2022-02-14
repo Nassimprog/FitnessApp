@@ -8,7 +8,7 @@
     
     <ContentPage.Content>
         <StackLayout Margin ="20" HorizontalOptions="CenterAndExpand">
-            <Image Source="Title"></Image>
+            
 
             <Label Text="Login" FontSize="Title" TextColor="WhiteSmoke"></Label>
             

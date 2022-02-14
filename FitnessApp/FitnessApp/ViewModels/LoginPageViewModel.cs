@@ -10,10 +10,10 @@ using Xamarin.Forms;
 
 namespace FitnessApp.ViewModels
 {
-    public class LoginPageViewModel : INotifyPropertyChanged
+    public class LoginPageViewModel : BaseViewModel
     {
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        
 
         public Command NavigateToProfileCommand { get; set; }
         public LoginPageViewModel()

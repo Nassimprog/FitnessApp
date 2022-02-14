@@ -11,6 +11,7 @@ namespace FitnessApp
         public App()
         {
             InitializeComponent();
+
             MainPage = new NavigationPage(new LoginPage());
             NavigationDispatcher.Instance.Initialize(MainPage.Navigation);
         }

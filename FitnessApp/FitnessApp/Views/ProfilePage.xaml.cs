@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace FitnessApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class ProfilePage : ContentPage
     {
-        public LoginPage()
+        public ProfilePage()
         {
             InitializeComponent();
         }

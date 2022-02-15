@@ -1,11 +1,6 @@
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudio,xamarinstudio
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,xamarinstudio
 
-### XamarinStudio ###
-bin/
-obj/
-*.userprefs
-.packages
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudio
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -21,6 +16,7 @@ obj/
 *.sln.docstates
 
 # User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
 
 # Mono auto generated files
 mono_crash.*
@@ -407,4 +403,4 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudio,xamarinstudio
+# End of https://www.toptal.com/developers/gitignore/api/visualstudio

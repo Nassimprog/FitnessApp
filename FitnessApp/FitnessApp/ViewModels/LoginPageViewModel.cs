@@ -12,7 +12,7 @@ namespace FitnessApp.ViewModels
 {
     public class LoginPageViewModel : BaseViewModel
     {
-
+        List<object> LoginPageData = new List<object>();
         
 
         public Command NavigateToProfileCommand { get; set; }
@@ -23,7 +23,7 @@ namespace FitnessApp.ViewModels
         public void NavigateToProfile() //not unit testable since it uses xamarin forms
         {
             var profilepage = new ProfilePage();
-            NavigationDispatcher.Instance.Navigation.PushAsync(profilepage);
+            Navigate(profilepage, LoginPageData);
         }
         
     }

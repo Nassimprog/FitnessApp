@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FitnessApp.Navigation;
+using FitnessApp.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -17,6 +19,19 @@ namespace FitnessApp.ViewModels
             var handler = PropertyChanged;
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected void Navigate(Page viewToNavigateTo, List<Object> args) //data that gets carried across pages.
+        {
+            NavigationDispatcher.Instance.Navigation.PushAsync(viewToNavigateTo);
+            // Given the page that is being navigated to
+            //switch (nameof(Page))
+            //{
+            //    case nameof(ProfilePage): // name of view navigated to 
+            //        //var nameToNavigate = args[0] as insertnamehere; // assign variables of previous page into the new page
+                    
+            //        break;
+            //}
         }
         public BaseViewModel()
         {

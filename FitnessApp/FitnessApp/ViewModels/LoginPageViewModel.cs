@@ -20,7 +20,7 @@ namespace FitnessApp.ViewModels
         {
             NavigateToProfileCommand = new Command(NavigateToProfile);
         }
-        public void NavigateToProfile() //not unit testable since it uses xamarin forms
+        public void NavigateToProfile() //not unit testable
         {
             var profilepage = new ProfilePage();
             Navigate(profilepage, LoginPageData);

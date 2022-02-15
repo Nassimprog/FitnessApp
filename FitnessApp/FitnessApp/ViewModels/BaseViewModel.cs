@@ -28,9 +28,9 @@ namespace FitnessApp.ViewModels
             //switch (nameof(Page))
             //{
             //    case nameof(ProfilePage): // name of view navigated to 
-            //        //var nameToNavigate = args[0] as insertnamehere; // assign variables of previous page into the new page
-                    
-            //        break;
+            //        var nameToNavigate = args[0] as insertnamehere; // assign variables of previous page into the new page
+            //        NavigationDispatcher.Instance.Navigation.PushAsync(viewToNavigateTo);
+            //        break; //says unreachable
             //}
         }
         public BaseViewModel()

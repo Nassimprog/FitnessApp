@@ -12,8 +12,8 @@
 
             <Label Text="Login" FontSize="Title" TextColor="WhiteSmoke"></Label>
             <StackLayout>
-                <Grid >
-                    <Button Text="Tracker" Command="{Binding NavigateToStartPageCommand}" Grid.Row="11" Grid.Column="1"></Button>
+                <Grid>
+                    <Button Text="Tracker" Command="{Binding NavigateToTrackerPage}" Grid.Row="11" Grid.Column="1"></Button>
                 </Grid>
             </StackLayout>
         </StackLayout>

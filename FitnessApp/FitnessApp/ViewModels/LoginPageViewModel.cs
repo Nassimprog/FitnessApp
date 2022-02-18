@@ -1,6 +1,6 @@
-﻿using FitnessApp.Navigation;
+﻿using System;
+using FitnessApp.Navigation;
 using FitnessApp.Views;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;

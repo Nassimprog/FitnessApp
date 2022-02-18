@@ -16,6 +16,7 @@ namespace FitnessApp.ViewModels
         public ProfilePageViewModel()
         {
             NavigateToTrackerCommand = new Command(NavigateToTrackerPage);
+            
         }
         
 

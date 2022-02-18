@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessApp.Views.ProfilePage"
              xmlns:views="clr-namespace:FitnessApp.Views"
              xmlns:viewModels="clr-namespace:FitnessApp.ViewModels"
-             x:Class="FitnessApp.Views.ProfilePage"
              BackgroundColor="#32353B">
 
     <ContentPage.BindingContext>

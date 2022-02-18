@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 namespace FitnessApp.ViewModels
 {
-    public class TrackerPageViewModel : ContentPage
+    public class ProfilePageViewModel : ContentPage
     {
-        public TrackerPageViewModel()
+        public ProfilePageViewModel()
         {
             
         }

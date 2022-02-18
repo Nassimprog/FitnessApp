@@ -11,11 +11,13 @@ namespace FitnessApp.ViewModels
 {
     public class ProfilePageViewModel : ContentPage
     {
+        public Command NavigateToTrackerCommand { get; set; }
+
         public ProfilePageViewModel()
         {
             NavigateToTrackerCommand = new Command(NavigateToTrackerPage);
         }
-        public Command NavigateToTrackerCommand { get; set; }
+        
 
         public void NavigateToTrackerPage() //not unit testable
         {

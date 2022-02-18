@@ -16,6 +16,7 @@ namespace FitnessApp.ViewModels
         
 
         public Command NavigateToProfileCommand { get; set; }
+
         public LoginPageViewModel()
         {
             NavigateToProfileCommand = new Command(NavigateToProfile);
@@ -23,7 +24,7 @@ namespace FitnessApp.ViewModels
         public void NavigateToProfile() //not unit testable
         {
             var profilepage = new ProfilePage();
-            Navigate(profilepage, LoginPageData);
+            NavigationDispatcher.Instance.Navigation.PushAsync(profilepage);
         }
         
     }

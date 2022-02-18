@@ -2,18 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:FitnessApp.Views"
+             xmlns:viewModels="clr-namespace:FitnessApp.ViewModels"
              x:Class="FitnessApp.Views.ProfilePage"
              BackgroundColor="#32353B">
-    
-    
+
+    <ContentPage.BindingContext>
+        <viewModels:ProfilePageViewModel></viewModels:ProfilePageViewModel>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <StackLayout Margin ="20" HorizontalOptions="CenterAndExpand">
             
 
-            <Label Text="Login" FontSize="Title" TextColor="WhiteSmoke"></Label>
+            <Label Text="Profile" FontSize="Title" TextColor="WhiteSmoke"></Label>
             <StackLayout>
                 <Grid>
-                    <Button Text="Tracker" Command="{Binding NavigateToTrackerPage}" Grid.Row="11" Grid.Column="1"></Button>
+                    <Button Text="Tracker" Command="{Binding NavigateToTrackerCommand}" Grid.Row="11" Grid.Column="1"></Button>
                 </Grid>
             </StackLayout>
         </StackLayout>

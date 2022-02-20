@@ -11,6 +11,8 @@ namespace FitnessApp.ViewModels
 {
     public class ProfilePageViewModel : ContentPage
     {
+        public bool LoggedIn = false;
+
         public Command NavigateToTrackerCommand { get; set; }
 
         public ProfilePageViewModel()

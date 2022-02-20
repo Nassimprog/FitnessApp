@@ -10,13 +10,18 @@
         <viewModels:TrackerPageViewModel></viewModels:TrackerPageViewModel>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Tracker Page!"
-            VerticalOptions="CenterAndExpand" 
-            HorizontalOptions="CenterAndExpand" />
+        
 
         <StackLayout Margin ="20" HorizontalOptions="CenterAndExpand">
             <Label Text="Tracker" FontSize="Title" TextColor="WhiteSmoke"></Label>
+
+            <StackLayout HorizontalOptions="Start">
+                <Grid>
+                    <Label Text="Test" FontSize="Body" Grid.Row="1" Grid.Column="0"></Label>
+                </Grid>
+                
+            </StackLayout>
+            
             <StackLayout>
                 <Grid>
                     <Button Text="Profile" Command="{Binding NavigateToProfileCommand}" Grid.Row="11" Grid.Column="0"></Button>
@@ -24,6 +29,6 @@
                 </Grid>
             </StackLayout>
         </StackLayout>
-        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

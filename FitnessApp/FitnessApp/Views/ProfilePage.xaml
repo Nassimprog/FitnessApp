@@ -10,16 +10,58 @@
         <viewModels:ProfilePageViewModel></viewModels:ProfilePageViewModel>
     </ContentPage.BindingContext>
 
-    <ContentPage.Content>
-        <StackLayout Margin ="20" HorizontalOptions="CenterAndExpand">
-            
+    
 
-            <Label Text="Profile" FontSize="Title" TextColor="WhiteSmoke"></Label>
-            <StackLayout>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackLayout HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0">
+            <StackLayout HorizontalOptions="Start" VerticalOptions="Start" >
+                <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Profile" FontSize="Title"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
                 <Grid>
-                    <Button Text="Tracker" Command="{Binding NavigateToTrackerCommand}" Grid.Row="11" Grid.Column="1"></Button>
+                    <Entry Placeholder="Height" WidthRequest="250" Grid.Row="1"></Entry>
+                    <Label VerticalTextAlignment="Center"  Text="M" Grid.Row="1" Grid.Column="1"></Label>
+
+                    <Entry Placeholder="Weight" WidthRequest="150" Grid.Row="2"></Entry>
+                    <Label VerticalTextAlignment="Center"  Text="Kg" Grid.Row="2" Grid.Column="1"></Label>
+
+                    <Entry Placeholder="Age" WidthRequest="75" Grid.Row="3" Grid.Column="0"></Entry>
+                    <Label VerticalTextAlignment="Center"  Text="Kg" Grid.Row="2" Grid.Column="1"></Label>
+
+                    
                 </Grid>
             </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+
+
+        <StackLayout VerticalOptions="Start" Grid.Row="1">
+            <Button Text="BMI:" HorizontalOptions="Start" WidthRequest="150" Grid.Row="5" Grid.Column="0"></Button>
+            <Label Text="BMI here" HorizontalOptions="End" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
+            <Button Text="Heart Rate"  HorizontalOptions="Start" WidthRequest="150" Grid.Row="6" Grid.Column="0"></Button>
+            <Label Text="Heart Rate here" HorizontalOptions="End" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
+        </StackLayout>
+        
+
+        <StackLayout VerticalOptions="Center" Grid.Row="6">
+            <StackLayout>
+                <Grid>
+                    <Button Text="Tracker" Command="{Binding NavigateToTrackerCommand}" Grid.Row="0" Grid.Column="1"></Button>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+        
+    </Grid>
 </ContentPage>

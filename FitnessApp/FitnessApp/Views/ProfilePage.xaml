@@ -48,10 +48,10 @@
 
 
         <StackLayout VerticalOptions="Start" Grid.Row="1">
-            <Button Text="BMI:" HorizontalOptions="Start" WidthRequest="150" Grid.Row="5" Grid.Column="0"></Button>
-            <Label Text="BMI here" HorizontalOptions="End" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
-            <Button Text="Heart Rate"  HorizontalOptions="Start" WidthRequest="150" Grid.Row="6" Grid.Column="0"></Button>
-            <Label Text="Heart Rate here" HorizontalOptions="End" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
+            <Button Text="BMI:" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="0"></Button>
+            <Label Text="BMI here" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
+            <Button Text="Heart Rate"  HorizontalOptions="Center" WidthRequest="150" Grid.Row="6" Grid.Column="0"></Button>
+            <Label Text="Heart Rate here" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
         </StackLayout>
         
 

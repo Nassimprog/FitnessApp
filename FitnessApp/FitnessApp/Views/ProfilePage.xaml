@@ -32,10 +32,10 @@
 
             <StackLayout Orientation="Horizontal">
                 <Grid>
-                    <Entry Placeholder="Height" WidthRequest="250" Grid.Row="1"></Entry>
-                    <Label VerticalTextAlignment="Center"  Text="M" Grid.Row="1" Grid.Column="1"></Label>
+                    <Entry Placeholder="Height" Text="{Binding Height, Mode=TwoWay}" WidthRequest="250" Grid.Row="1"></Entry>
+                    <Label VerticalTextAlignment="Center"  Text="Cm" Grid.Row="1" Grid.Column="1"></Label>
 
-                    <Entry Placeholder="Weight" WidthRequest="150" Grid.Row="2"></Entry>
+                    <Entry Placeholder="Weight" Text="{Binding Weight, Mode=TwoWay}" WidthRequest="150" Grid.Row="2"></Entry>
                     <Label VerticalTextAlignment="Center"  Text="Kg" Grid.Row="2" Grid.Column="1"></Label>
 
                     <Entry Placeholder="Age" WidthRequest="75" Grid.Row="3" Grid.Column="0"></Entry>
@@ -46,10 +46,20 @@
             </StackLayout>
         </StackLayout>
 
+        <StackLayout VerticalOptions="Start" Grid.Row="0">
+            <Grid>
+                <Label Text="Foot steps tracked" HorizontalOptions="Center" WidthRequest="150" Grid.Row="12" Grid.Column="0"></Label>
+                <Label Text="Calories burned" HorizontalOptions="Center" WidthRequest="150" Grid.Row="12" Grid.Column="1"></Label>
 
-        <StackLayout VerticalOptions="Start" Grid.Row="1">
-            <Button Text="BMI:" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="0"></Button>
-            <Label Text="BMI here" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
+                <Label Text="Foot steps tracked" HorizontalOptions="Center" WidthRequest="150" Grid.Row="13" Grid.Column="0"></Label>
+                <Label Text="Calories burned" HorizontalOptions="Center" WidthRequest="150" Grid.Row="13" Grid.Column="1"></Label>
+            </Grid>
+            
+        </StackLayout>
+
+        <StackLayout VerticalOptions="Start" Grid.Row="2">
+            <Button Text="BMI:" Command="{Binding CalculateBmiCommand}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="0"></Button>
+            <Label Text="{Binding BMI, Mode=TwoWay}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
             <Button Text="Heart Rate"  HorizontalOptions="Center" WidthRequest="150" Grid.Row="6" Grid.Column="0"></Button>
             <Label Text="Heart Rate here" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
         </StackLayout>

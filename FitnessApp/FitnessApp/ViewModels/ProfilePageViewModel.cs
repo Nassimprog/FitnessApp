@@ -72,7 +72,7 @@ namespace FitnessApp.ViewModels
         public void CalculateBmi()
         {
             var meters = Height / 100;
-            BMI = Weight / (meters * meters);
+            BMI = Math.Round((Weight / (meters * meters)),1);
         }
 
         public void NavigateToTrackerPage() //not unit testable

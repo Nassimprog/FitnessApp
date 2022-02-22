@@ -16,8 +16,8 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="8*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -46,13 +46,13 @@
             </StackLayout>
         </StackLayout>
 
-        <StackLayout VerticalOptions="Start" Grid.Row="0">
+        <StackLayout VerticalOptions="Start" Grid.Row="1">
             <Grid>
-                <Label Text="Foot steps tracked" HorizontalOptions="Center" WidthRequest="150" Grid.Row="12" Grid.Column="0"></Label>
-                <Label Text="Calories burned" HorizontalOptions="Center" WidthRequest="150" Grid.Row="12" Grid.Column="1"></Label>
+                <Label Text="Foot steps tracked" HorizontalOptions="Center" WidthRequest="150" Grid.Row="0" Grid.Column="0"></Label>
+                <Label Text="Calories burned" HorizontalOptions="Center" WidthRequest="150" Grid.Row="0" Grid.Column="1"></Label>
 
-                <Label Text="Foot steps tracked" HorizontalOptions="Center" WidthRequest="150" Grid.Row="13" Grid.Column="0"></Label>
-                <Label Text="Calories burned" HorizontalOptions="Center" WidthRequest="150" Grid.Row="13" Grid.Column="1"></Label>
+                <Label Text="Foot steps tracked" HorizontalOptions="Center" WidthRequest="150" Grid.Row="1" Grid.Column="0"></Label>
+                <Label Text="Calories burned" HorizontalOptions="Center" WidthRequest="150" Grid.Row="1" Grid.Column="1"></Label>
             </Grid>
             
         </StackLayout>

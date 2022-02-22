@@ -24,7 +24,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"></RowDefinition>
-            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -65,9 +65,10 @@
         </StackLayout>
 
         <StackLayout VerticalOptions="Start" Grid.Row="2">
+            
             <Button Text="BMI:" Command="{Binding CalculateBmiCommand}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="0"></Button>
             <Label Text="{Binding BMI, Mode=TwoWay}" TextColor="{Binding BMI, Converter={StaticResource BmiToColourConverter}}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
-            <Button Text="Heart Rate"  HorizontalOptions="Center" WidthRequest="150" Grid.Row="6" Grid.Column="0"></Button>
+            <Button Text="Heart Rate"  HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="0"></Button>
             <Label Text="Heart Rate here" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
         </StackLayout>
         

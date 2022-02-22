@@ -4,7 +4,14 @@
              x:Class="FitnessApp.Views.ProfilePage"
              xmlns:views="clr-namespace:FitnessApp.Views"
              xmlns:viewModels="clr-namespace:FitnessApp.ViewModels"
+             xmlns:Converters="clr-namespace:FitnessApp.Converters"
              BackgroundColor="#32353B">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:BmiToColourConverter x:Key="BmiToColourConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.BindingContext>
         <viewModels:ProfilePageViewModel></viewModels:ProfilePageViewModel>
@@ -59,7 +66,7 @@
 
         <StackLayout VerticalOptions="Start" Grid.Row="2">
             <Button Text="BMI:" Command="{Binding CalculateBmiCommand}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="0"></Button>
-            <Label Text="{Binding BMI, Mode=TwoWay}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
+            <Label Text="{Binding BMI, Mode=TwoWay}" TextColor="{Binding BMI, Converter={StaticResource BmiToColourConverter}}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
             <Button Text="Heart Rate"  HorizontalOptions="Center" WidthRequest="150" Grid.Row="6" Grid.Column="0"></Button>
             <Label Text="Heart Rate here" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
         </StackLayout>

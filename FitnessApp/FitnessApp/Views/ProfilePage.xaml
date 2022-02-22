@@ -45,7 +45,7 @@
                     <Entry Placeholder="Weight" Text="{Binding Weight, Mode=TwoWay}" WidthRequest="150" Grid.Row="2"></Entry>
                     <Label VerticalTextAlignment="Center"  Text="Kg" Grid.Row="2" Grid.Column="1"></Label>
 
-                    <Entry Placeholder="Age" WidthRequest="75" Grid.Row="3" Grid.Column="0"></Entry>
+                    <Entry Placeholder="Age" Text="{Binding Age, Mode=TwoWay}"  WidthRequest="75" Grid.Row="3" Grid.Column="0"></Entry>
                     <Label VerticalTextAlignment="Center"  Text="Kg" Grid.Row="2" Grid.Column="1"></Label>
 
                     

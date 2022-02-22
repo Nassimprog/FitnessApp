@@ -16,6 +16,20 @@ namespace FitnessApp.ViewModels
         private double _height;
         private double _weight;
         private double _bmi;
+        private int _age;
+
+        public int Age
+        {
+            get => _age;
+            set
+            {
+                if (_age != value)
+                {
+                    _age = value;
+                    OnPropertyChanged(nameof(Age));
+                }
+            }
+        }
 
         public new double Height
         {

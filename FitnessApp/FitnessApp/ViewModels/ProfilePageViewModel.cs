@@ -16,6 +16,8 @@ namespace FitnessApp.ViewModels
         private double _height;
         private double _weight;
         private double _bmi;
+        private string _weight_unit;
+        private string _height_unit;
         private int _age;
 
         public int Age
@@ -71,6 +73,16 @@ namespace FitnessApp.ViewModels
                 }
             }
         }
+        public double bmiUnit
+        {
+            get => weightToUnit[_weight_unit];
+        }
+        Dictionary<string, double> weightToUnit = new Dictionary<string, double>
+        {
+            { "Kg", 1 }, { "lbs", 0.5 },
+            { "Stone", 1 }, { "M", 0.5 },
+            { "Cm", 1 }, { "Ft", 0.5 },
+        };
 
         public Command NavigateToTrackerCommand { get; set; }
         public Command CalculateBmiCommand { get; set; }

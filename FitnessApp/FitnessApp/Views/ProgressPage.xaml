@@ -21,6 +21,7 @@
                     <Button Text="Profile" Command="{Binding NavigateToProfileCommand}" Grid.Row="11" Grid.Column="1"></Button>
                 </Grid>
             </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

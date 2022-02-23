@@ -40,13 +40,28 @@
             <StackLayout Orientation="Horizontal">
                 <Grid>
                     <Entry Placeholder="Height" Text="{Binding Height, Mode=TwoWay}" WidthRequest="250" Grid.Row="1"></Entry>
-                    <Label VerticalTextAlignment="Center"  Text="Cm" Grid.Row="1" Grid.Column="1"></Label>
-
+                    <Picker VerticalTextAlignment="Center" x:Name="HeightUnit"  Title="Unit" Grid.Row="1" Grid.Column="1">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>M</x:String>
+                                <x:String>Cm</x:String>
+                                <x:String>Ft</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    
                     <Entry Placeholder="Weight" Text="{Binding Weight, Mode=TwoWay}" WidthRequest="150" Grid.Row="2"></Entry>
-                    <Label VerticalTextAlignment="Center"  Text="Kg" Grid.Row="2" Grid.Column="1"></Label>
-
+                    <Picker VerticalTextAlignment="Center" x:Name="WeightUnit"  Title="Unit" Grid.Row="2" Grid.Column="1">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Kg</x:String>
+                                <x:String>Stone</x:String>
+                                <x:String>Lbs</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
                     <Entry Placeholder="Age" Text="{Binding Age, Mode=TwoWay}"  WidthRequest="75" Grid.Row="3" Grid.Column="0"></Entry>
-                    <Label VerticalTextAlignment="Center"  Text="Kg" Grid.Row="2" Grid.Column="1"></Label>
+                    
 
                     
                 </Grid>

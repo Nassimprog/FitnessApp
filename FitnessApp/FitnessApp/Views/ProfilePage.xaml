@@ -40,8 +40,8 @@
             <StackLayout Orientation="Horizontal">
                 <Grid>
                     <Entry Placeholder="Height" Text="{Binding Height, Mode=TwoWay}" WidthRequest="250" Grid.Row="1"></Entry>
-                    <Picker VerticalTextAlignment="Center" x:Name="HeightUnit"  Title="Unit" Grid.Row="1" Grid.Column="1">
-                        <Picker.ItemsSource>
+                    <Picker  SelectedItem="{Binding HeightUnit}" VerticalTextAlignment="Center" x:Name="HeightUnit"  Title="Unit" Grid.Row="1" Grid.Column="1">
+                        <Picker.ItemsSource SelectedItem="{Binding HeightUnit}">
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>M</x:String>
                                 <x:String>Cm</x:String>
@@ -51,7 +51,7 @@
                     </Picker>
                     
                     <Entry Placeholder="Weight" Text="{Binding Weight, Mode=TwoWay}" WidthRequest="150" Grid.Row="2"></Entry>
-                    <Picker VerticalTextAlignment="Center" x:Name="WeightUnit"  Title="Unit" Grid.Row="2" Grid.Column="1">
+                    <Picker SelectedItem="{Binding WeightUnit}"  VerticalTextAlignment="Center" x:Name="WeightUnit"  Title="Unit" Grid.Row="2" Grid.Column="1">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>Kg</x:String>

@@ -73,15 +73,37 @@ namespace FitnessApp.ViewModels
                 }
             }
         }
-        public double bmiUnit
+        public string WeightUnit
         {
-            get => weightToUnit[_weight_unit];
+            get => _weight_unit;
+            set
+            {
+                if (_weight_unit != value)
+                {
+                    _weight_unit = value;
+                    CalculateBmiCommand.ChangeCanExecute();
+                }
+            }
         }
-        Dictionary<string, double> weightToUnit = new Dictionary<string, double>
+
+        public string HeightUnit
+        {
+            get => _height_unit;
+            set
+            {
+                if (_height_unit != value)
+                {
+                    _height_unit = value;
+                    CalculateBmiCommand.ChangeCanExecute();
+                }
+            }
+        }
+
+        Dictionary<string, double> ToUnit = new Dictionary<string, double>
         {
             { "Kg", 1 }, { "lbs", 0.5 },
-            { "Stone", 1 }, { "M", 0.5 },
-            { "Cm", 1 }, { "Ft", 0.5 },
+            { "Stone", 0.5 }, { "M", 0.5 },
+            { "Cm", 1 }, { "Ft", 0.5 }
         };
 
         public Command NavigateToTrackerCommand { get; set; }
@@ -89,7 +111,7 @@ namespace FitnessApp.ViewModels
         public ProfilePageViewModel()
         {
             CalculateBmiCommand = new Command(CalculateBmi, () => {
-                return Weight != 0 && Height != 0;
+                return Weight != 0 && Height != 0 && WeightUnit != null && HeightUnit != null;
             });
             NavigateToTrackerCommand = new Command(NavigateToTrackerPage);
             
@@ -97,8 +119,11 @@ namespace FitnessApp.ViewModels
 
         public void CalculateBmi()
         {
-            var meters = Height / 100;
-            BMI = Math.Round((Weight / (meters * meters)),1);
+            var w_unit = ToUnit[_weight_unit];
+            var h_unit = ToUnit[_height_unit];
+            var meters = Height * h_unit;
+            var kg = Weight * w_unit;
+            BMI = Math.Round(((kg) / (meters * meters)),1);
         }
 
         public void NavigateToTrackerPage() //not unit testable

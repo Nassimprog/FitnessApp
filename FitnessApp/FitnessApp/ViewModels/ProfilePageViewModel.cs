@@ -99,11 +99,11 @@ namespace FitnessApp.ViewModels
             }
         }
 
-        Dictionary<string, double> ToUnit = new Dictionary<string, double>
+        Dictionary<string, double> ToUnit = new Dictionary<string, double> // conversions relative to a Kg/M using Google's Unit converter
         {
-            { "Kg", 1 }, { "lbs", 0.5 },
-            { "Stone", 0.5 }, { "M", 0.5 },
-            { "Cm", 1 }, { "Ft", 0.5 }
+            { "Kg", 1 }, { "Pound", 2.20462 },
+            { "Stone", 0.157473 }, { "M", 1 },
+            { "Cm", 100 }, { "Ft", 3.28084 }
         };
 
         public Command NavigateToTrackerCommand { get; set; }
@@ -121,8 +121,9 @@ namespace FitnessApp.ViewModels
         {
             var w_unit = ToUnit[_weight_unit];
             var h_unit = ToUnit[_height_unit];
-            var meters = Height * h_unit;
-            var kg = Weight * w_unit;
+            // converting to base unit of 1 kg and 1 M by dividing by current Unit value
+            var meters = Height / h_unit;
+            var kg = Weight / w_unit;
             BMI = Math.Round(((kg) / (meters * meters)),1);
         }
 

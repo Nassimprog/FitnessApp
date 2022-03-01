@@ -39,6 +39,7 @@
 
             <StackLayout Orientation="Horizontal">
                 <Grid>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Height" HorizontalOptions="End"></Label>
                     <Entry Placeholder="Height" Text="{Binding Height, Mode=TwoWay}" WidthRequest="250" Grid.Row="1"></Entry>
                     <Picker  SelectedItem="{Binding HeightUnit}" VerticalTextAlignment="Center" x:Name="HeightUnit"  Title="Unit" Grid.Row="1" Grid.Column="1">
                         <Picker.ItemsSource SelectedItem="{Binding HeightUnit}">
@@ -49,7 +50,7 @@
                             </x:Array>
                         </Picker.ItemsSource>
                     </Picker>
-                    
+                    <Label Grid.Row="2" Grid.Column="0" Text="Weight" HorizontalOptions="End"></Label>
                     <Entry Placeholder="Weight" Text="{Binding Weight, Mode=TwoWay}" WidthRequest="150" Grid.Row="2"></Entry>
                     <Picker SelectedItem="{Binding WeightUnit}"  VerticalTextAlignment="Center" x:Name="WeightUnit"  Title="Unit" Grid.Row="2" Grid.Column="1">
                         <Picker.ItemsSource>
@@ -60,6 +61,7 @@
                             </x:Array>
                         </Picker.ItemsSource>
                     </Picker>
+                    <Label Grid.Row="3" Grid.Column="0" Text="Age" HorizontalOptions="End"></Label>
                     <Entry Placeholder="Age" Text="{Binding Age, Mode=TwoWay}"  WidthRequest="75" Grid.Row="3" Grid.Column="0"></Entry>
                     
 

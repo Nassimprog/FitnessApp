@@ -33,6 +33,15 @@ namespace FitnessApp.ViewModels
             //        break; //says unreachable
             //}
         }
+
+        protected void CheckLoggedIn(bool loggedIn)
+        {
+            if(!loggedIn)
+            {
+                //check if logged in if not create on appearing login page
+            }
+        }
+
         public BaseViewModel()
         {
         }

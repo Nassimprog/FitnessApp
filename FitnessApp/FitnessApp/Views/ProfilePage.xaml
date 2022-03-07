@@ -17,8 +17,6 @@
         <viewModels:ProfilePageViewModel></viewModels:ProfilePageViewModel>
     </ContentPage.BindingContext>
 
-    
-
 
 
     <Grid>

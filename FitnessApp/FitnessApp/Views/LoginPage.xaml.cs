@@ -12,9 +12,11 @@ namespace FitnessApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        IAuth auth;
         public LoginPage()
         {
             InitializeComponent();
+            auth = DependencyService.Get<IAuth>();
         }
     }
 }

@@ -12,14 +12,16 @@ namespace FitnessApp.ViewModels
 {
     public class LoginPageViewModel : BaseViewModel
     {
+        IAuth auth;
         List<object> LoginPageData = new List<object>();
         
 
         public Command NavigateToProfileCommand { get; set; }
-
+        
         public LoginPageViewModel()
         {
             NavigateToProfileCommand = new Command(NavigateToProfile);
+            auth = DependencyService.Get<IAuth>();
         }
         public void NavigateToProfile() //not unit testable
         {
@@ -29,3 +31,5 @@ namespace FitnessApp.ViewModels
         
     }
 }
+
+

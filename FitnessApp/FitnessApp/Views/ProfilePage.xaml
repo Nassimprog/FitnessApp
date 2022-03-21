@@ -5,7 +5,8 @@
              xmlns:views="clr-namespace:FitnessApp.Views"
              xmlns:viewModels="clr-namespace:FitnessApp.ViewModels"
              xmlns:Converters="clr-namespace:FitnessApp.Converters"
-             BackgroundColor="#32353B">
+             BackgroundColor="#32353B"
+             >
 
     <ContentPage.Resources>
         <ResourceDictionary>

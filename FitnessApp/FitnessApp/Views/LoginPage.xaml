@@ -17,9 +17,15 @@
             <Label Text="Login" FontSize="Title" TextColor="WhiteSmoke"
                 VerticalOptions="Center"
                 HorizontalOptions="Center" />
-            <Entry Placeholder="Email"></Entry>
-            <Entry Placeholder="Password"></Entry>
-            <Button Text="Login" Command="{Binding NavigateToProfileCommand}"></Button>
+            <Entry Placeholder="Email"
+                   x:Name="EmailInput"></Entry>
+            
+            <Entry Placeholder="Password"
+                   IsPassword="True"
+                   x:Name="PasswordInput"></Entry>
+            <Button Text="Login" 
+                    Clicked ="LoginClicked"
+                    Command="{Binding NavigateToProfileCommand}"></Button>
             
             <Label Text="New User?" TextColor="WhiteSmoke" FontSize="Title" 
                 VerticalOptions="Start"
@@ -27,15 +33,20 @@
             <Label Text="Sign Up" TextColor="WhiteSmoke"
                 VerticalOptions="Center"
                 HorizontalOptions="Center" />
-            <Entry Placeholder="Email"></Entry>
-            <Entry Placeholder="Password"></Entry>
+            <Entry Placeholder="Email"
+                   x:Name="Reg_EmailInput"></Entry>
+            <Entry Placeholder="Password"
+                   IsPassword="True"
+                   x:Name="Reg_SignUpInput"></Entry>
             <StackLayout>
                 <Grid>
                     <CheckBox IsChecked="False" Grid.Column="0"/>
                     <Label Text="I agree to the terms and conditions" Grid.Column="1" Grid.ColumnSpan="7" Grid.Row="0"/>
                 </Grid>
             </StackLayout>
-            <Button Text="Sign Up" Command="{Binding NavigateToProfileCommand}"></Button>
+            <Button Text="Sign Up" 
+                    Clicked ="SignUpClicked"
+                    Command="{Binding NavigateToProfileCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

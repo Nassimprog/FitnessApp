@@ -11,6 +11,7 @@ namespace FitnessApp.ViewModels
 {
     public class ProfilePageViewModel : ContentPage
     {
+        IAuth auth;
         public bool LoggedIn = false;
 
         private double _height;
@@ -114,7 +115,18 @@ namespace FitnessApp.ViewModels
                 return Weight != 0 && Height != 0 && WeightUnit != null && HeightUnit != null;
             });
             NavigateToTrackerCommand = new Command(NavigateToTrackerPage);
-            
+            auth = DependencyService.Get<IAuth>();
+
+        }
+
+        void SignOutButton_Clicked(object sender, EventArgs e)
+        {
+            var SignOut = auth.SignOut();
+
+            if (SignOut)
+            {
+                Application.Current.MainPage = new LoginPage();
+            }
         }
 
         public void CalculateBmi()

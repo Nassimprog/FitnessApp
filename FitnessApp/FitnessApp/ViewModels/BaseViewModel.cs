@@ -12,7 +12,7 @@ namespace FitnessApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-
+        IAuth auth;
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName) // gives the same properties and binding behaviour as seen in Xamarin Forms
         {
@@ -44,6 +44,7 @@ namespace FitnessApp.ViewModels
 
         public BaseViewModel()
         {
+            auth = DependencyService.Get<IAuth>();
         }
     }
 }

@@ -11,11 +11,13 @@ namespace FitnessApp.ViewModels
 {
     public class TrackerPageViewModel : ContentPage
     {
+        IAuth auth;
         public Command NavigateToProgressCommand { get; set; }
         public Command NavigateToProfileCommand { get; set; }
 
     public TrackerPageViewModel()
         {
+            auth = DependencyService.Get<IAuth>();
             NavigateToProgressCommand = new Command(NavigateToProgressPage);
             NavigateToProfileCommand = new Command(NavigateToProfilePage);
         }

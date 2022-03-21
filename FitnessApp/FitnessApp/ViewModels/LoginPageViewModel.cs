@@ -38,7 +38,7 @@ namespace FitnessApp.ViewModels
         //    }
         //}
 
-        //async Task SignUpClicked(object sender, EventArgs e)
+        // Task SignUpClicked(object sender, EventArgs e)
         //{
         //    var signOut = auth.SignOut();
         //

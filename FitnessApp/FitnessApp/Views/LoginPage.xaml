@@ -18,14 +18,14 @@
                 VerticalOptions="Center"
                 HorizontalOptions="Center" />
             <Entry Placeholder="Email"
-                   x:Name="EmailInput"></Entry>
+                   Text="{Binding LoginEmail}"></Entry>
             
             <Entry Placeholder="Password"
                    IsPassword="True"
-                   x:Name="PasswordInput"></Entry>
+                   Text="{Binding LoginPassword}"></Entry>
             <Button Text="Login" 
                    
-                    Command="{Binding NavigateToProfileCommand}"></Button>
+                    Command="{Binding LoginCommand}"></Button>
             
             <Label Text="New User?" TextColor="WhiteSmoke" FontSize="Title" 
                 VerticalOptions="Start"
@@ -34,10 +34,10 @@
                 VerticalOptions="Center"
                 HorizontalOptions="Center" />
             <Entry Placeholder="Email"
-                   x:Name="Reg_EmailInput"></Entry>
+                  Text="{Binding SignUpEmail}"></Entry>
             <Entry Placeholder="Password"
                    IsPassword="True"
-                   x:Name="Reg_SignUpInput"></Entry>
+                   Text="{Binding SignUpPassword}"></Entry>
             <StackLayout>
                 <Grid>
                     <CheckBox IsChecked="False" Grid.Column="0"/>
@@ -46,7 +46,7 @@
             </StackLayout>
             <Button Text="Sign Up" 
                     
-                    Command="{Binding NavigateToProfileCommand}"></Button>
+                    Command="{Binding SignUpCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

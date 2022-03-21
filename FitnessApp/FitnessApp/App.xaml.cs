@@ -16,7 +16,7 @@ namespace FitnessApp
 
             if (auth.IsSignIn())
             {
-                MainPage = new ProfilePage();
+                MainPage = new NavigationPage(new ProfilePage());
             }
             else
             {

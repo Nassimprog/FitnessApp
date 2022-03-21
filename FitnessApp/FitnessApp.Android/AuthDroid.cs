@@ -21,7 +21,7 @@ namespace FitnessApp.Droid
 
         public bool IsSignIn()
         {
-            var user = Firebase.Auth.FirebaseAuth.Instance.CurrentUser;
+            var user = FirebaseAuth.Instance.CurrentUser;
             return user != null;
         }
 

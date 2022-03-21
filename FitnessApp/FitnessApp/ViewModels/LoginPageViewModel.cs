@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace FitnessApp.ViewModels
 {
@@ -38,13 +39,13 @@ namespace FitnessApp.ViewModels
         //    }
         //}
 
-        // Task SignUpClicked(object sender, EventArgs e)
+        //Task SignUpClicked(object sender, EventArgs e)
         //{
         //    var signOut = auth.SignOut();
-        //
+
         //    if (signOut)
         //    {
-        //      Application.Current.MainPage = new LoginPage();
+        //        Application.Current.MainPage = new LoginPage();
         //    }
         //}
 

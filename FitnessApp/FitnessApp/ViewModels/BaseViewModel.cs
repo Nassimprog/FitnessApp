@@ -42,6 +42,16 @@ namespace FitnessApp.ViewModels
             }
         }
 
+        public void SignOutFireBase()
+        {
+            var signOut = auth.SignOut();
+
+            if (signOut)
+            {
+                Application.Current.MainPage = new LoginPage();
+            }
+        }
+
         public BaseViewModel()
         {
             auth = DependencyService.Get<IAuth>();

@@ -52,7 +52,7 @@ namespace FitnessApp.Droid
                 Firebase.Auth.FirebaseAuth.Instance.SignOut();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

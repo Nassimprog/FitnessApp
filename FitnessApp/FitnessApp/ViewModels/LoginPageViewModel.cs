@@ -13,7 +13,6 @@ namespace FitnessApp.ViewModels
     public class LoginPageViewModel : BaseViewModel
     {
         IAuth auth;
-        List<object> LoginPageData = new List<object>();
 
         public string LoginEmail { get; set; }
         public string LoginPassword { get; set; }
@@ -84,15 +83,7 @@ namespace FitnessApp.ViewModels
 
 
 
-        public void SignOutFireBase()
-        {
-            var signOut = auth.SignOut();
-
-            if (signOut)
-            {
-                Application.Current.MainPage = new LoginPage();
-            }
-        }
+        
 
 
 

@@ -100,7 +100,7 @@ namespace FitnessApp.ViewModels
             }
         }
 
-        Dictionary<string, double> ToUnit = new Dictionary<string, double> // conversions relative to a Kg/M using Google's Unit converter
+        readonly Dictionary<string, double> ToUnit = new Dictionary<string, double> // conversions relative to a Kg/M using Google's Unit converter
         {
             { "Kg", 1 }, { "Pound", 2.20462 },
             { "Stone", 0.157473 }, { "M", 1 },

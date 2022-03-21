@@ -24,7 +24,7 @@
                    IsPassword="True"
                    x:Name="PasswordInput"></Entry>
             <Button Text="Login" 
-                    Clicked ="LoginClicked"
+                   
                     Command="{Binding NavigateToProfileCommand}"></Button>
             
             <Label Text="New User?" TextColor="WhiteSmoke" FontSize="Title" 
@@ -45,7 +45,7 @@
                 </Grid>
             </StackLayout>
             <Button Text="Sign Up" 
-                    Clicked ="SignUpClicked"
+                    
                     Command="{Binding NavigateToProfileCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>

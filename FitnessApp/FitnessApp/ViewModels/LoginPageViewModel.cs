@@ -40,31 +40,46 @@ namespace FitnessApp.ViewModels
 
         private async Task LoginFireBase()
         {
-            string token = await auth.LoginWithEmailAndPassword(LoginEmail, LoginPassword);
-            if (token != string.Empty)
+            if(LoginEmail != null && LoginPassword != null)
             {
-                //await App.Current.MainPage.DisplayAlert("Uid", token, "Ok");
-                Application.Current.MainPage = new ProfilePage();
+                string token = await auth.LoginWithEmailAndPassword(LoginEmail, LoginPassword);
+                if (token != string.Empty)
+                {
+                    //await App.Current.MainPage.DisplayAlert("Uid", token, "Ok");
+                    Application.Current.MainPage = new ProfilePage();
+                }
+                else
+                {
+                    await App.Current.MainPage.DisplayAlert("Authentication Failed", "Email or Password are incorrect", "OK");
+                }
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert("Authentication Failed", "Email or Password are incorrect", "OK");
+                await App.Current.MainPage.DisplayAlert("Authentication Failed", "please fill out all fields", "OK");
             }
+            
         }
 
         private async Task SignUpFireBase()
-        {   
-
-            string token = await auth.SignUpWithEmailAndPassword(SignUpEmail, SignUpPassword);
-            if (token != string.Empty)
+        {
+            if (SignUpEmail != null && SignUpPassword != null)
             {
-                //await App.Current.MainPage.DisplayAlert("Uid", token, "Ok");
-                Application.Current.MainPage = new ProfilePage();
+                string token = await auth.SignUpWithEmailAndPassword(SignUpEmail, SignUpPassword);
+                if (token != string.Empty)
+                {
+                    //await App.Current.MainPage.DisplayAlert("Uid", token, "Ok");
+                    Application.Current.MainPage = new ProfilePage();
+                }
+                else
+                {
+                    await App.Current.MainPage.DisplayAlert("New Account Created, Login to continue.", token, "Ok");
+                }
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert("New Account Created, Login to continue.", token, "Ok");
+                await App.Current.MainPage.DisplayAlert("Authentication Failed", "please fill out all fields", "OK");
             }
+
         }
 
 

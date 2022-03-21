@@ -29,6 +29,7 @@ namespace FitnessApp.ViewModels
         //    string token = await auth.LoginWithEmailAndPassword(EmailInput.Text, PasswordInput.Text);
         //    if (token != string.Empty)
         //    {
+        //        await App.Current.MainPage.DisplayAlert("Uid", token, "Ok");
         //        Application.Current.MainPage = new ProfilePage();
         //    }
         //    else

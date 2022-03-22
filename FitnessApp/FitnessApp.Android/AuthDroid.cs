@@ -63,7 +63,7 @@ namespace FitnessApp.Droid
         {
             try
             {
-                var newUser = await Firebase.Auth.FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
+                var newUser = await FirebaseAuth.Instance.CreateUserWithEmailAndPasswordAsync(email, password);
                 var token = newUser.User.Uid;
                 return token;
             }

@@ -24,7 +24,7 @@ namespace FitnessApp.ViewModels
         public Command LoginCommand { get; set; }
         public Command SignUpCommand { get; set; }
         public Command SignOutCommand { get; set; }
-        
+
 
         public LoginPageViewModel()
         {
@@ -32,7 +32,7 @@ namespace FitnessApp.ViewModels
             auth = DependencyService.Get<IAuth>(); // initialise auth service
             LoginCommand = new Command(async () => await LoginFireBase());
             SignUpCommand = new Command(async () => await SignUpFireBase());
-            SignOutCommand = new Command(SignOutFireBase);
+            
 
         }
 
@@ -46,6 +46,8 @@ namespace FitnessApp.ViewModels
                 {
                     //await App.Current.MainPage.DisplayAlert("Uid", token, "Ok");
                     Application.Current.MainPage = new ProfilePage();
+                    NavigationDispatcher.Instance.Initialize(Application.Current.MainPage.Navigation);
+
                 }
                 else
                 {
@@ -68,6 +70,8 @@ namespace FitnessApp.ViewModels
                 {
                     //await App.Current.MainPage.DisplayAlert("Uid", token, "Ok");
                     Application.Current.MainPage = new ProfilePage();
+                    NavigationDispatcher.Instance.Initialize(Application.Current.MainPage.Navigation);
+
                 }
                 else
                 {

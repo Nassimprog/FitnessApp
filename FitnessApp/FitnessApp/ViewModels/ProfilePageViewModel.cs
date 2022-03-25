@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace FitnessApp.ViewModels
 {
-    public class ProfilePageViewModel : ContentPage
+    public class ProfilePageViewModel : BaseViewModel
     {
         IAuth auth;
         public bool LoggedIn = false;
@@ -109,25 +109,22 @@ namespace FitnessApp.ViewModels
 
         public Command NavigateToTrackerCommand { get; set; }
         public Command CalculateBmiCommand { get; set; }
+        public Command SignOutCommand { get; set; }
         public ProfilePageViewModel()
         {
+            auth = DependencyService.Get<IAuth>();
             CalculateBmiCommand = new Command(CalculateBmi, () => {
                 return Weight != 0 && Height != 0 && WeightUnit != null && HeightUnit != null;
             });
             NavigateToTrackerCommand = new Command(NavigateToTrackerPage);
-            auth = DependencyService.Get<IAuth>();
+            SignOutCommand = new Command(SignOutFireBase);
+
+
+
 
         }
 
-        void SignOutButton_Clicked(object sender, EventArgs e)
-        {
-            var SignOut = auth.SignOut();
-
-            if (SignOut)
-            {
-                Application.Current.MainPage = new LoginPage();
-            }
-        }
+        
 
         public void CalculateBmi()
         {

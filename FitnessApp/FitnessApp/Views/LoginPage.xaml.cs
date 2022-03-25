@@ -15,8 +15,11 @@ namespace FitnessApp.Views
         IAuth auth;
         public LoginPage()
         {
+
             InitializeComponent();
             auth = DependencyService.Get<IAuth>();
         }
+
+        
     }
 }

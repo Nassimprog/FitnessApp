@@ -23,15 +23,15 @@ namespace FitnessApp.ViewModels
 
         protected void Navigate(Page viewToNavigateTo, List<Object> args) //data that gets carried across pages.
         {
+            var pages = NavigationDispatcher.Instance.Navigation.NavigationStack.Count;
+            for (var i = 1; i < pages; i++)
+            {
+                var pageToRemove = NavigationDispatcher.Instance.Navigation.NavigationStack.ElementAt(i);
+                NavigationDispatcher.Instance.Navigation.RemovePage(pageToRemove);
+            }
             NavigationDispatcher.Instance.Navigation.PushAsync(viewToNavigateTo);
-            // Given the page that is being navigated to
-            //switch (nameof(Page))
-            //{
-            //    case nameof(ProfilePage): // name of view navigated to 
-            //        var nameToNavigate = args[0] as insertnamehere; // assign variables of previous page into the new page
-            //        NavigationDispatcher.Instance.Navigation.PushAsync(viewToNavigateTo);
-            //        break; //says unreachable
-            //}
+            
+            
         }
 
         protected void CheckLoggedIn(bool loggedIn)
@@ -48,13 +48,21 @@ namespace FitnessApp.ViewModels
 
             if (signOut)
             {
-                Application.Current.MainPage = new LoginPage();
+                //Application.Current.MainPage = new LoginPage();
+                NavigationDispatcher.Instance.Navigation.PopToRootAsync();
+                //NavigationDispatcher.Instance.Initialize(Application.Current.MainPage.Navigation);
+
             }
         }
+
+        
+
 
         public BaseViewModel()
         {
             auth = DependencyService.Get<IAuth>();
+            
+
         }
     }
 }

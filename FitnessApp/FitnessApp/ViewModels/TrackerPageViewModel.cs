@@ -31,7 +31,8 @@ namespace FitnessApp.ViewModels
 
         public void NavigateToProfilePage() //not unit testable
         {
-            NavigationDispatcher.Instance.Navigation.PopToRootAsync();
+            NavigationDispatcher.Instance.Navigation.PopAsync();
+            
         }
     }
 }

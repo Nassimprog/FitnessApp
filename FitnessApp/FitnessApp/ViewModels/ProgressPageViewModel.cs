@@ -31,7 +31,9 @@ namespace FitnessApp.ViewModels
         }
         public void NavigateToProfilePage() //not unit testable
         {
-            NavigationDispatcher.Instance.Navigation.PopToRootAsync();
+            //NavigationDispatcher.Instance.Navigation.RemovePage(NavigationDispatcher.Instance.Navigation.NavigationStack[0]);
+            NavigationDispatcher.Instance.Navigation.PopAsync();
+            NavigationDispatcher.Instance.Navigation.PopAsync();
         }
 
     }

@@ -4,7 +4,8 @@
              x:Class="FitnessApp.Views.ProgressPage"
              xmlns:views="clr-namespace:FitnessApp.Views"
              xmlns:viewModels="clr-namespace:FitnessApp.ViewModels"
-             BackgroundColor="#32353B">
+             BackgroundColor="#32353B"
+             NavigationPage.HasBackButton="False">
     
     <ContentPage.BindingContext>
         <viewModels:ProgressPageViewModel></viewModels:ProgressPageViewModel>

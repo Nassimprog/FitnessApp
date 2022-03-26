@@ -18,6 +18,10 @@ namespace FitnessApp.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
+            //Xamarin essentials
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
+
             //firebase
             FirebaseApp.InitializeApp(Application.Context);
 

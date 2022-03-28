@@ -1,25 +1,28 @@
 ﻿using System;
 using FitnessApp.Navigation;
 using FitnessApp.Views;
+using Xamarin.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace FitnessApp.ViewModels
 {
+    SensorSpeed speed = SensorSpeed.UI;
+
+    Accel
+
     public class TrackerPageViewModel : ContentPage
     {
         IAuth auth;
         public Command NavigateToProgressCommand { get; set; }
-        public Command NavigateToProfileCommand { get; set; }
+        
 
     public TrackerPageViewModel()
         {
             auth = DependencyService.Get<IAuth>();
             NavigateToProgressCommand = new Command(NavigateToProgressPage);
-            NavigateToProfileCommand = new Command(NavigateToProfilePage);
         }
 
 
@@ -29,10 +32,6 @@ namespace FitnessApp.ViewModels
             NavigationDispatcher.Instance.Navigation.PushAsync(progresspage);
         }
 
-        public void NavigateToProfilePage() //not unit testable
-        {
-            NavigationDispatcher.Instance.Navigation.PopAsync();
-            
-        }
+        
     }
 }

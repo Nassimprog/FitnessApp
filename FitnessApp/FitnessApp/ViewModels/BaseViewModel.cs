@@ -21,26 +21,9 @@ namespace FitnessApp.ViewModels
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        protected void Navigate(Page viewToNavigateTo, List<Object> args) //data that gets carried across pages.
-        {
-            var pages = NavigationDispatcher.Instance.Navigation.NavigationStack.Count;
-            for (var i = 1; i < pages; i++)
-            {
-                var pageToRemove = NavigationDispatcher.Instance.Navigation.NavigationStack.ElementAt(i);
-                NavigationDispatcher.Instance.Navigation.RemovePage(pageToRemove);
-            }
-            NavigationDispatcher.Instance.Navigation.PushAsync(viewToNavigateTo);
-            
-            
-        }
+      
 
-        protected void CheckLoggedIn(bool loggedIn)
-        {
-            if(!loggedIn)
-            {
-                //check if logged in if not create on appearing login page
-            }
-        }
+        
 
         public void SignOutFireBase()
         {
@@ -48,10 +31,7 @@ namespace FitnessApp.ViewModels
 
             if (signOut)
             {
-                //Application.Current.MainPage = new LoginPage();
-                //NavigationDispatcher.Instance.Navigation.PopToRootAsync();
-                //NavigationDispatcher.Instance.Initialize(Application.Current.MainPage.Navigation);
-
+                
                 Shell.Current.Navigation.PushModalAsync(new LoginPage());
 
             }

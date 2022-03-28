@@ -11,10 +11,11 @@
                       Route="ProfilePage"
                       Icon="fitness.png"
                       ContentTemplate="{DataTemplate views:ProfilePage}" />
-    <ShellContent Title="Tracker"
-                  Route="TrackerPage"
-                  Icon="jump.png"
-                  ContentTemplate="{DataTemplate views:TrackerPage}" />
+        
+        <ShellContent Title="Tracker"
+                      Route="TrackerPage"
+                      Icon="jump.png"
+                      ContentTemplate="{DataTemplate views:TrackerPage}" />
 
     </TabBar>
 </Shell>

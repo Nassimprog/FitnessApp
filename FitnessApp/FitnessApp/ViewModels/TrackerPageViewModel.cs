@@ -9,7 +9,7 @@ using Xamarin.Essentials;
 
 namespace FitnessApp.ViewModels
 {
-    SensorSpeed speed = SensorSpeed.UI;
+    //SensorSpeed speed = SensorSpeed.UI;
 
     
 

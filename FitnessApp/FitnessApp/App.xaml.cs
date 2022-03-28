@@ -17,7 +17,8 @@ namespace FitnessApp
             
             if (auth.IsSignIn())
             {
-                //NavigationDispatcher.Instance.Navigation.PushAsync(new ProfilePage());
+                Current.MainPage = new NavigationShell();
+                
             }
            
             

@@ -22,7 +22,7 @@ namespace FitnessApp.ViewModels
 
         public Command LoginCommand { get; set; }
         public Command SignUpCommand { get; set; }
-        public Command SignOutCommand { get; set; }
+        
 
 
         public LoginPageViewModel()

@@ -110,6 +110,7 @@ namespace FitnessApp.ViewModels
         public Command NavigateToTrackerCommand { get; set; }
         public Command CalculateBmiCommand { get; set; }
         public Command SignOutCommand { get; set; }
+
         public ProfilePageViewModel()
         {
             auth = DependencyService.Get<IAuth>();

@@ -13,16 +13,17 @@ namespace FitnessApp.ViewModels
 
     
 
-    public class TrackerPageViewModel : ContentPage
+    public class TrackerPageViewModel : BaseViewModel
     {
         IAuth auth;
         public Command NavigateToProgressCommand { get; set; }
-        
 
-    public TrackerPageViewModel()
+        public Command SignOutCommand { get; set; }
+
+        public TrackerPageViewModel()
         {
             auth = DependencyService.Get<IAuth>();
-            //NavigateToProgressCommand = new Command(NavigateToProgressPage);
+            SignOutCommand = new Command(SignOutFireBase);
         }
 
 

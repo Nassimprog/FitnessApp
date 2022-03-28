@@ -10,9 +10,14 @@
     <ContentPage.BindingContext>
         <viewModels:TrackerPageViewModel></viewModels:TrackerPageViewModel>
     </ContentPage.BindingContext>
-    <ContentPage.Content>
-        
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text = "Sign Out" Command="{Binding SignOutCommand}"
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
         <StackLayout Margin ="20" HorizontalOptions="CenterAndExpand">
             <Label Text="Tracker" FontSize="Title" TextColor="WhiteSmoke"></Label>
 

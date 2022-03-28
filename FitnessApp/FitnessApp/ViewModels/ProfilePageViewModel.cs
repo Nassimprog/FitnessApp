@@ -107,7 +107,7 @@ namespace FitnessApp.ViewModels
             { "Cm", 100 }, { "Ft", 3.28084 }
         };
 
-        public Command NavigateToTrackerCommand { get; set; }
+       
         public Command CalculateBmiCommand { get; set; }
         public Command SignOutCommand { get; set; }
 
@@ -117,12 +117,8 @@ namespace FitnessApp.ViewModels
             CalculateBmiCommand = new Command(CalculateBmi, () => {
                 return Weight != 0 && Height != 0 && WeightUnit != null && HeightUnit != null;
             });
-            NavigateToTrackerCommand = new Command(NavigateToTrackerPage);
+            
             SignOutCommand = new Command(SignOutFireBase);
-
-
-
-
         }
 
         
@@ -137,10 +133,6 @@ namespace FitnessApp.ViewModels
             BMI = Math.Round(((kg) / (meters * meters)),1);
         }
 
-        public void NavigateToTrackerPage() //not unit testable
-        {
-            var trackerpage = new TrackerPage();
-            NavigationDispatcher.Instance.Navigation.PushAsync(trackerpage);
-        }
+        
     }
 }

@@ -45,8 +45,10 @@ namespace FitnessApp.ViewModels
                 if (token != string.Empty)
                 {
                     //await App.Current.MainPage.DisplayAlert("Uid", token, "Ok");
-                    Application.Current.MainPage = new ProfilePage();
-                    NavigationDispatcher.Instance.Initialize(Application.Current.MainPage.Navigation);
+                    Application.Current.MainPage = new NavigationShell();
+                    await Shell.Current.GoToAsync("//ProfilePage");
+                    //NavigationDispatcher.Instance.Initialize(Application.Current.MainPage.Navigation);
+                    
 
                 }
                 else

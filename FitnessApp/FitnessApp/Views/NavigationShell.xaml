@@ -4,11 +4,17 @@
              x:Class="FitnessApp.Views.NavigationShell"
              xmlns:views="clr-namespace:FitnessApp.Views"
              BackgroundColor="#32353B">
-
-    <ShellContent Title="Profile"
+    
+    
+    <TabBar>
+        <ShellContent Title="Profile"
+                      Route="ProfilePage"
                       Icon="fitness.png"
                       ContentTemplate="{DataTemplate views:ProfilePage}" />
     <ShellContent Title="Tracker"
-                      Icon="jump.png"
-                      ContentTemplate="{DataTemplate views:TrackerPage}" />
+                  Route="TrackerPage"
+                  Icon="jump.png"
+                  ContentTemplate="{DataTemplate views:TrackerPage}" />
+
+    </TabBar>
 </Shell>

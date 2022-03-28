@@ -13,11 +13,11 @@ namespace FitnessApp
         {
             InitializeComponent();
             auth = DependencyService.Get<IAuth>();
-            MainPage = new NavigationPage(new LoginPage());
-            NavigationDispatcher.Instance.Initialize(MainPage.Navigation);
+            MainPage = new LoginPage();
+            
             if (auth.IsSignIn())
             {
-                NavigationDispatcher.Instance.Navigation.PushAsync(new ProfilePage());
+                //NavigationDispatcher.Instance.Navigation.PushAsync(new ProfilePage());
             }
            
             

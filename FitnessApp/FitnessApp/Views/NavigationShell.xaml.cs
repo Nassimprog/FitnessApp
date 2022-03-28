@@ -14,7 +14,12 @@ namespace FitnessApp.Views
     {
         public NavigationShell()
         {
+
+           
+            
             InitializeComponent();
+            Routing.RegisterRoute("login", typeof(LoginPage));
+
         }
     }
 }

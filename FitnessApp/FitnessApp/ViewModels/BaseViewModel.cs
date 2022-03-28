@@ -49,8 +49,10 @@ namespace FitnessApp.ViewModels
             if (signOut)
             {
                 //Application.Current.MainPage = new LoginPage();
-                NavigationDispatcher.Instance.Navigation.PopToRootAsync();
+                //NavigationDispatcher.Instance.Navigation.PopToRootAsync();
                 //NavigationDispatcher.Instance.Initialize(Application.Current.MainPage.Navigation);
+
+                Shell.Current.Navigation.PushModalAsync(new LoginPage());
 
             }
         }

@@ -39,7 +39,7 @@ namespace FitnessApp.ViewModels
 
         private async Task LoginFireBase()
         {
-            if(LoginEmail != null && LoginPassword != null)
+            if(LoginEmail != null && LoginPassword != null) //makes sure its not empty
             {
                 string token = await auth.LoginWithEmailAndPassword(LoginEmail, LoginPassword);
                 if (token != string.Empty)

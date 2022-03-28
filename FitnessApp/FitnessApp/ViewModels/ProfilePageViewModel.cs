@@ -136,10 +136,10 @@ namespace FitnessApp.ViewModels
             BMI = Math.Round(((kg) / (meters * meters)),1);
         }
 
-        public void NavigateToTrackerPage() //not unit testable
-        {
-            var trackerpage = new TrackerPage();
-            NavigationDispatcher.Instance.Navigation.PushAsync(trackerpage);
-        }
+        //public void NavigateToTrackerPage() //not unit testable also incompatible with Signout 
+        //{
+        //    var trackerpage = new TrackerPage();
+        //    NavigationDispatcher.Instance.Navigation.PushAsync(new NavigationPage (trackerpage));
+        //}
     }
 }

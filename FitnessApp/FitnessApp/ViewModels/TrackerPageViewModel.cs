@@ -11,7 +11,7 @@ namespace FitnessApp.ViewModels
 {
     SensorSpeed speed = SensorSpeed.UI;
 
-    Accel
+    
 
     public class TrackerPageViewModel : ContentPage
     {
@@ -22,15 +22,11 @@ namespace FitnessApp.ViewModels
     public TrackerPageViewModel()
         {
             auth = DependencyService.Get<IAuth>();
-            NavigateToProgressCommand = new Command(NavigateToProgressPage);
+            //NavigateToProgressCommand = new Command(NavigateToProgressPage);
         }
 
 
-        public void NavigateToProgressPage() //not unit testable
-        {
-            var progresspage = new ProgressPage();
-            NavigationDispatcher.Instance.Navigation.PushAsync(progresspage);
-        }
+        
 
         
     }

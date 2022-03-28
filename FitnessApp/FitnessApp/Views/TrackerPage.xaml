@@ -23,12 +23,7 @@
                 
             </StackLayout>
             
-            <StackLayout>
-                <Grid>
-                    <Button Text="Profile" Command="{Binding NavigateToProfileCommand}" Grid.Row="11" Grid.Column="0"></Button>
-                    <Button Text="Progress" Command="{Binding NavigateToProgressCommand}" Grid.Row="11" Grid.Column="1"></Button>
-                </Grid>
-            </StackLayout>
+            
         </StackLayout>
         
     </ContentPage.Content>

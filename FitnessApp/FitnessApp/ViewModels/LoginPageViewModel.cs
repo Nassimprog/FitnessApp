@@ -20,7 +20,6 @@ namespace FitnessApp.ViewModels
         public string SignUpPassword { get; set; }
 
 
-        public Command NavigateToProfileCommand { get; set; }
         public Command LoginCommand { get; set; }
         public Command SignUpCommand { get; set; }
         public Command SignOutCommand { get; set; }
@@ -28,7 +27,7 @@ namespace FitnessApp.ViewModels
 
         public LoginPageViewModel()
         {
-            NavigateToProfileCommand = new Command(NavigateToProfile);
+           
             auth = DependencyService.Get<IAuth>(); // initialise auth service
             LoginCommand = new Command(async () => await LoginFireBase());
             SignUpCommand = new Command(async () => await SignUpFireBase());
@@ -44,10 +43,10 @@ namespace FitnessApp.ViewModels
                 string token = await auth.LoginWithEmailAndPassword(LoginEmail, LoginPassword);
                 if (token != string.Empty)
                 {
-                    //await App.Current.MainPage.DisplayAlert("Uid", token, "Ok");
+                    
                     Application.Current.MainPage = new NavigationShell();
                     await Shell.Current.GoToAsync("//ProfilePage");
-                    //NavigationDispatcher.Instance.Initialize(Application.Current.MainPage.Navigation);
+                   
                     
 
                 }
@@ -70,9 +69,9 @@ namespace FitnessApp.ViewModels
                 string token = await auth.SignUpWithEmailAndPassword(SignUpEmail, SignUpPassword);
                 if (token != string.Empty)
                 {
-                    //await App.Current.MainPage.DisplayAlert("Uid", token, "Ok");
-                    Application.Current.MainPage = new ProfilePage();
-                    NavigationDispatcher.Instance.Initialize(Application.Current.MainPage.Navigation);
+
+                    Application.Current.MainPage = new NavigationShell();
+                    await Shell.Current.GoToAsync("//ProfilePage");
 
                 }
                 else
@@ -85,18 +84,6 @@ namespace FitnessApp.ViewModels
                 await App.Current.MainPage.DisplayAlert("Authentication Failed", "please fill out all fields", "OK");
             }
 
-        }
-
-
-
-        
-
-
-
-        public void NavigateToProfile() //not unit testable
-        {
-            var profilepage = new ProfilePage();
-            NavigationDispatcher.Instance.Navigation.PushAsync(profilepage);
         }
 
     }

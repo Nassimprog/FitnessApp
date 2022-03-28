@@ -98,14 +98,5 @@
             <Label Text="Heart Rate here" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
         </StackLayout>
         
-
-        <StackLayout VerticalOptions="Center" Grid.Row="6">
-            <StackLayout>
-                <Grid>
-                    <Button Text="Tracker" Command="{Binding NavigateToTrackerCommand}" Grid.Row="0" Grid.Column="1"></Button>
-                </Grid>
-            </StackLayout>
-        </StackLayout>
-        
     </Grid>
 </ContentPage>

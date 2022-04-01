@@ -94,8 +94,7 @@
             
             <Button Text="BMI:" Command="{Binding CalculateBmiCommand}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="0"></Button>
             <Label Text="{Binding BMI, Mode=TwoWay}" TextColor="{Binding BMI, Converter={StaticResource BmiToColourConverter}}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
-            <Label Text="Heart Rate:" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
-            <Label Text="Heart Rate here" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
+           
         </StackLayout>
         
     </Grid>

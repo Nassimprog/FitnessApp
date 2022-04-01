@@ -23,7 +23,8 @@
 
             <StackLayout HorizontalOptions="Start">
                 <Grid>
-                    <Label Text="Test" FontSize="Body" Grid.Row="1" Grid.Column="0"></Label>
+                    <Label Text="Enable footstep tracking" FontSize="Large" Grid.Row="1" Grid.Column="0"></Label>
+                    <Switch IsToggled="{Binding BeginTrackerCommand}" Toggled="{Binding BeginTrackerCommand}" Grid.Row="1" Grid.Column="0" />
                 </Grid>
                 
             </StackLayout>

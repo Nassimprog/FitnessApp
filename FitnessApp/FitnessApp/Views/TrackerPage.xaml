@@ -24,7 +24,14 @@
             <StackLayout HorizontalOptions="Start">
                 <Grid>
                     <Label Text="Enable footstep tracking" FontSize="Large" Grid.Row="1" Grid.Column="0"></Label>
-                    <Switch IsToggled="{Binding BeginTrackerCommand}" Toggled="{Binding BeginTrackerCommand}" Grid.Row="1" Grid.Column="0" />
+                    <Switch IsToggled="{Binding EnabledTracking}" Toggled="Switch_Toggled"  Grid.Row="1" Grid.Column="0" />
+
+                    <Label Text="Total number of steps" FontSize="Large" Grid.Row="3" Grid.Column="0"></Label>
+                    <Label Text="{Binding Footsteps, Mode=TwoWay}" TextColor="White" FontSize="Large" Grid.Row="5" Grid.Column="0" HorizontalOptions="Center"> </Label>
+
+                    <Label Text="Total number of steps" FontSize="Large" Grid.Row="6" Grid.Column="0"></Label>
+                    <Label Text="{Binding CaloriesBurned, Mode=TwoWay}" TextColor="White" FontSize="Large" Grid.Row="7" Grid.Column="0" HorizontalOptions="Center"></Label>
+
                 </Grid>
                 
             </StackLayout>

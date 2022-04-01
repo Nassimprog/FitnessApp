@@ -1,5 +1,5 @@
 using NUnit.Framework;
-
+using FitnessApp.ViewModels
 namespace FitnessAppTests
 {
     public class Tests
@@ -7,6 +7,7 @@ namespace FitnessAppTests
         [SetUp]
         public void Setup()
         {
+            
         }
 
         [Test]

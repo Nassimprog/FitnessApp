@@ -34,7 +34,7 @@ namespace FitnessAppTests
             viewModelTest.WeightUnit = "Kg";
 
             //act
-            Xamarin.Forms.Forms.Init();
+            //Xamarin.Forms.Forms.Init();
 
             //Assert
             Assert.IsTrue(viewModelTest.BMI == 17.5);

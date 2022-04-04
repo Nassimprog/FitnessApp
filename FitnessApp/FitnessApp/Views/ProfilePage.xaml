@@ -79,17 +79,6 @@
             </StackLayout>
         </StackLayout>
 
-        <StackLayout VerticalOptions="Start" Grid.Row="1">
-            <Grid>
-                <Label Text="Foot steps tracked" HorizontalOptions="Center" WidthRequest="150" Grid.Row="0" Grid.Column="0"></Label>
-                <Label Text="Calories burned" HorizontalOptions="Center" WidthRequest="150" Grid.Row="0" Grid.Column="1"></Label>
-
-                <Label Text="Foot steps tracked" HorizontalOptions="Center" WidthRequest="150" Grid.Row="1" Grid.Column="0"></Label>
-                <Label Text="Calories burned" HorizontalOptions="Center" WidthRequest="150" Grid.Row="1" Grid.Column="1"></Label>
-            </Grid>
-            
-        </StackLayout>
-
         <StackLayout VerticalOptions="Start" Grid.Row="2">
             
             <Button Text="BMI:" Command="{Binding CalculateBmiCommand}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="0"></Button>

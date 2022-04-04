@@ -58,14 +58,8 @@ namespace FitnessApp.ViewModels
         {
             auth = DependencyService.Get<IAuth>();
             SignOutCommand = new Command(SignOutFireBase);
-            BeginTrackerCommand = new Command(() =>
-            {
-                new Thread(() =>
-                {
-                    
-                    BeginTracker();
-                }).Start();
-            });
+            BeginTrackerCommand = new Command(BeginTracker);
+            
             StopTrackerCommand = new Command(StopTracker);
         }
 
@@ -73,34 +67,43 @@ namespace FitnessApp.ViewModels
         {
             
              // If tracking permission has been given, do
-            Accelerometer.ReadingChanged += Accelerometer_readingChanged;
+            Accelerometer.ReadingChanged += Accelerometer_readingChangedAsync;
             Accelerometer.Start(SensorSpeed.UI);
-
+            
             
         }
         
 
             public void StopTracker()
         {
-            Accelerometer.ReadingChanged -= Accelerometer_readingChanged;
+            Accelerometer.ReadingChanged -= Accelerometer_readingChangedAsync;
             Accelerometer.Stop();
         }
         ///On accelerometer measurements update
-        private void Accelerometer_readingChanged(object sender, AccelerometerChangedEventArgs e)
+        private async void Accelerometer_readingChangedAsync(object sender, AccelerometerChangedEventArgs e)
         {
+            var cts = new CancellationTokenSource();
+            Task.Run(() => FootstepCalorieCounter(sender, e)).Wait(100, cts.Token); 
             // if the magnitude of acceleration in the X or Y axis is 1
 
-            if (e.Reading.Acceleration.X >= 0.01 || e.Reading.Acceleration.Y >= 0.01 || e.Reading.Acceleration.X >= -0.01 || e.Reading.Acceleration.Y >= -0.01)
+            
+            
+        }
+
+
+        private void FootstepCalorieCounter(object sender, AccelerometerChangedEventArgs e)
+        {
+            if (e.Reading.Acceleration.X >= 1 || e.Reading.Acceleration.Y >= 1 || e.Reading.Acceleration.X >= 1 || e.Reading.Acceleration.Y >= 1)
             {
                 Footsteps += 1;
                 //wait half a second for foot step counter to increase again
-                Thread.Sleep(1000000);
+                 
 
                 if (Footsteps % 25 == 0)
                     CaloriesBurned += 1;
 
             }
-
         }
+
     }
 }

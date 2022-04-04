@@ -1,5 +1,5 @@
+using FitnessApp.ViewModels;
 using NUnit.Framework;
-using FitnessApp.ViewModels
 namespace FitnessAppTests
 {
     public class Tests
@@ -11,9 +11,14 @@ namespace FitnessAppTests
         }
 
         [Test]
-        public void Test1()
+        public void TestBMIStKg()
         {
-            Assert.Pass();
+            var viewmodelUnderTest = new ProfilePageViewModel();
+
+            height = 1
+
+                expect
+
         }
     }
 }

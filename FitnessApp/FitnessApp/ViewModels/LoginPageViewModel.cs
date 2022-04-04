@@ -36,7 +36,7 @@ namespace FitnessApp.ViewModels
         }
 
 
-        private async Task LoginFireBase()
+        public async Task LoginFireBase()
         {
             if(LoginEmail != null && LoginPassword != null) //makes sure its not empty
             {
@@ -62,7 +62,7 @@ namespace FitnessApp.ViewModels
             
         }
 
-        private async Task SignUpFireBase()
+        public async Task SignUpFireBase()
         {
             if (SignUpEmail != null && SignUpPassword != null)
             {

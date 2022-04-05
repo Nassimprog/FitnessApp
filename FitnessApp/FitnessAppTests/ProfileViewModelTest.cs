@@ -20,7 +20,7 @@ namespace FitnessAppTests
         }
 
         [Test]
-        public async void Test_BMI_Using_M_Kg()
+        public void Test_BMI_Using_M_Kg()
         {
 
             

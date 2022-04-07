@@ -2,6 +2,7 @@
 
 FitnessApp: Pace Maker
 
+Designed for Android
 With Key features:
 
 Sign Up and log in features

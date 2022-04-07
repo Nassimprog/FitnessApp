@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessApp.Views.NavigationShell"
+             xmlns:views="clr-namespace:FitnessApp.Views"
+             BackgroundColor="#32353B">
+    
+    
+    <TabBar>
+        <ShellContent Title="Profile"
+                      Route="ProfilePage"
+                      Icon="fitness.png"
+                      ContentTemplate="{DataTemplate views:ProfilePage}" />
+        
+        <ShellContent Title="Tracker"
+                      Route="TrackerPage"
+                      Icon="jump.png"
+                      ContentTemplate="{DataTemplate views:TrackerPage}" />
+
+    </TabBar>
+</Shell>

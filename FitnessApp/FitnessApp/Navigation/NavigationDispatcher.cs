@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace FitnessApp.Navigation
 {
-    public class NavigationDispatcher
+    public class NavigationDispatcher // No longer needed due to shell compromise
     {
         private static NavigationDispatcher _instance;
 

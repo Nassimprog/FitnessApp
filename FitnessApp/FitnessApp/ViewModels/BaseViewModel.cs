@@ -12,7 +12,7 @@ namespace FitnessApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-
+        IAuth auth;
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName) // gives the same properties and binding behaviour as seen in Xamarin Forms
         {
@@ -21,20 +21,30 @@ namespace FitnessApp.ViewModels
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        protected void Navigate(Page viewToNavigateTo, List<Object> args) //data that gets carried across pages.
+      
+
+        
+
+        public void SignOutFireBase()
         {
-            NavigationDispatcher.Instance.Navigation.PushAsync(viewToNavigateTo);
-            // Given the page that is being navigated to
-            //switch (nameof(Page))
-            //{
-            //    case nameof(ProfilePage): // name of view navigated to 
-            //        var nameToNavigate = args[0] as insertnamehere; // assign variables of previous page into the new page
-            //        NavigationDispatcher.Instance.Navigation.PushAsync(viewToNavigateTo);
-            //        break; //says unreachable
-            //}
+            var signOut = auth.SignOut();
+
+            if (signOut)
+            {
+                
+                Shell.Current.Navigation.PushModalAsync(new LoginPage());
+
+            }
         }
+
+        
+
+
         public BaseViewModel()
         {
+            auth = DependencyService.Get<IAuth>();
+            
+
         }
     }
 }

@@ -8,12 +8,20 @@ namespace FitnessApp
 {
     public partial class App : Application
     {
+        IAuth auth;
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new LoginPage());
-            NavigationDispatcher.Instance.Initialize(MainPage.Navigation);
+            auth = DependencyService.Get<IAuth>();
+            MainPage = new LoginPage();
+            
+            if (auth.IsSignIn())
+            {
+                Current.MainPage = new NavigationShell();
+                
+            }
+           
+            
         }
 
         protected override void OnStart()

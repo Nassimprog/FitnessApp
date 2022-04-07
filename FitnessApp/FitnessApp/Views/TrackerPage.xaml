@@ -1,12 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FitnessApp.Views.TrackerPage">
+             x:Class="FitnessApp.Views.TrackerPage"
+             xmlns:views="clr-namespace:FitnessApp.Views"
+             xmlns:viewModels="clr-namespace:FitnessApp.ViewModels"
+             BackgroundColor="#32353B"
+             NavigationPage.HasBackButton="False">
+
+    <ContentPage.BindingContext>
+        <viewModels:TrackerPageViewModel></viewModels:TrackerPageViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text = "Sign Out" Command="{Binding SignOutCommand}"
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Tracker Page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin ="20" HorizontalOptions="CenterAndExpand">
+            <Label Text="Tracker" FontSize="Title" TextColor="WhiteSmoke"></Label>
+
+            <StackLayout HorizontalOptions="Start">
+                <Grid>
+                    <Label Text="Enable footstep tracking" FontSize="Large" Grid.Row="1" Grid.Column="0"></Label>
+                    <Switch IsToggled="{Binding EnabledTracking}" Toggled="Switch_Toggled"  Grid.Row="1" Grid.Column="0" />
+
+                    <Label Text="Total number of steps: " FontSize="Large" Grid.Row="3" Grid.Column="0"></Label>
+                    <Label Text="{Binding Footsteps, Mode=TwoWay}" TextColor="White" FontSize="Large" Grid.Row="4" Grid.Column="0" HorizontalOptions="Center"> </Label>
+
+                    <Label Text="Calories burned: " FontSize="Large" Grid.Row="6" Grid.Column="0"></Label>
+                    <Label Text="{Binding CaloriesBurned, Mode=TwoWay}" TextColor="White" FontSize="Large" Grid.Row="7" Grid.Column="0" HorizontalOptions="Center"></Label>
+
+                </Grid>
+                
+            </StackLayout>
+            
+            
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

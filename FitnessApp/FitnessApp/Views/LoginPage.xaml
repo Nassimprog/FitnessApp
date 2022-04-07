@@ -4,7 +4,8 @@
              xmlns:views="clr-namespace:FitnessApp.Views"
              xmlns:viewModels="clr-namespace:FitnessApp.ViewModels"
              x:Class="FitnessApp.Views.LoginPage"
-             BackgroundColor="#32353B">
+             BackgroundColor="#32353B"
+             NavigationPage.HasBackButton="False">
 
     <ContentPage.BindingContext>
         <viewModels:LoginPageViewModel></viewModels:LoginPageViewModel>
@@ -12,14 +13,23 @@
 
     <ContentPage.Content>
         <StackLayout Margin ="20" HorizontalOptions="CenterAndExpand">
+
+
             <Image Source="Title"></Image>
+            
 
             <Label Text="Login" FontSize="Title" TextColor="WhiteSmoke"
                 VerticalOptions="Center"
                 HorizontalOptions="Center" />
-            <Entry Placeholder="Email"></Entry>
-            <Entry Placeholder="Password"></Entry>
-            <Button Text="Login" Command="{Binding NavigateToProfileCommand}"></Button>
+            <Entry Placeholder="Email"
+                   Text="{Binding LoginEmail}"></Entry>
+            
+            <Entry Placeholder="Password"
+                   IsPassword="True"
+                   Text="{Binding LoginPassword}"></Entry>
+            <Button Text="Login" 
+                   
+                    Command="{Binding LoginCommand}"></Button>
             
             <Label Text="New User?" TextColor="WhiteSmoke" FontSize="Title" 
                 VerticalOptions="Start"
@@ -27,15 +37,20 @@
             <Label Text="Sign Up" TextColor="WhiteSmoke"
                 VerticalOptions="Center"
                 HorizontalOptions="Center" />
-            <Entry Placeholder="Email"></Entry>
-            <Entry Placeholder="Password"></Entry>
+            <Entry Placeholder="Email"
+                  Text="{Binding SignUpEmail}"></Entry>
+            <Entry Placeholder="Password"
+                   IsPassword="True"
+                   Text="{Binding SignUpPassword}"></Entry>
             <StackLayout>
                 <Grid>
                     <CheckBox IsChecked="False" Grid.Column="0"/>
                     <Label Text="I agree to the terms and conditions" Grid.Column="1" Grid.ColumnSpan="7" Grid.Row="0"/>
                 </Grid>
             </StackLayout>
-            <Button Text="Sign Up" Command="{Binding NavigateToProfileCommand}"></Button>
+            <Button Text="Sign Up" 
+                    
+                    Command="{Binding SignUpCommand}"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,17 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:views="clr-namespace:FitnessApp.Views"
              x:Class="FitnessApp.Views.ProfilePage"
-             BackgroundColor="#32353B">
-    
-    
-    <ContentPage.Content>
-        <StackLayout Margin ="20" HorizontalOptions="CenterAndExpand">
-            
+             xmlns:views="clr-namespace:FitnessApp.Views"
+             xmlns:viewModels="clr-namespace:FitnessApp.ViewModels"
+             xmlns:Converters="clr-namespace:FitnessApp.Converters"
+             BackgroundColor="#32353B"
+             NavigationPage.HasBackButton="False">
 
-            <Label Text="Login" FontSize="Title" TextColor="WhiteSmoke"></Label>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:BmiToColourConverter x:Key="BmiToColourConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <viewModels:ProfilePageViewModel></viewModels:ProfilePageViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text = "Sign Out" Command="{Binding SignOutCommand}"
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackLayout HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0">
+            <StackLayout HorizontalOptions="Start" VerticalOptions="Start" >
+                <Label HorizontalOptions="Start" VerticalOptions="Start" Text="Profile" FontSize="Title"></Label>
+            </StackLayout>
+
             
+            
+            
+            <StackLayout Orientation="Horizontal">
+
+
+                <Grid>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Height" HorizontalOptions="End"></Label>
+                    <Entry Placeholder="Height" Text="{Binding Height, Mode=TwoWay}" WidthRequest="250" Grid.Row="1"></Entry>
+                    <Picker  SelectedItem="{Binding HeightUnit}" VerticalTextAlignment="Center" x:Name="HeightUnit"  Title="Unit" Grid.Row="1" Grid.Column="1">
+                        <Picker.ItemsSource SelectedItem="{Binding HeightUnit}">
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>M</x:String>
+                                <x:String>Cm</x:String>
+                                <x:String>Ft</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Label Grid.Row="2" Grid.Column="0" Text="Weight" HorizontalOptions="End"></Label>
+                    <Entry Placeholder="Weight" Text="{Binding Weight, Mode=TwoWay}" WidthRequest="150" Grid.Row="2"></Entry>
+                    <Picker SelectedItem="{Binding WeightUnit}"  VerticalTextAlignment="Center" x:Name="WeightUnit"  Title="Unit" Grid.Row="2" Grid.Column="1">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Kg</x:String>
+                                <x:String>Stone</x:String>
+                                <x:String>Pound</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Label Grid.Row="3" Grid.Column="0" Text="Age" HorizontalOptions="End"></Label>
+                    <Entry Placeholder="Age" Text="{Binding Age, Mode=TwoWay}"  WidthRequest="75" Grid.Row="3" Grid.Column="0"></Entry>
+                    
+
+                    
+                </Grid>
+            </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+
+        <StackLayout VerticalOptions="Start" Grid.Row="2">
+            
+            <Button Text="BMI:" Command="{Binding CalculateBmiCommand}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="0"></Button>
+            <Label Text="{Binding BMI, Mode=TwoWay}" TextColor="{Binding BMI, Converter={StaticResource BmiToColourConverter}}" HorizontalOptions="Center" WidthRequest="150" Grid.Row="5" Grid.Column="1"></Label>
+           
+        </StackLayout>
+        
+    </Grid>
 </ContentPage>

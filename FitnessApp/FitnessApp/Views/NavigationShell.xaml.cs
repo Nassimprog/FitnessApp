@@ -10,11 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace FitnessApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProgressPage : ContentPage
+    public partial class NavigationShell : Shell
     {
-        public ProgressPage()
+        public NavigationShell()
         {
             InitializeComponent();
+            Routing.RegisterRoute("login", typeof(LoginPage));
         }
     }
 }

@@ -1,4 +1,4 @@
-# 6002CEM_rhaiemn
+# 6002CEM_rhaiemn  Mobile App Development module using Xamarin Forms
 
 FitnessApp: Pace Maker
 
